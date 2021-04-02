@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  background: #000;
+  color: #fff;
+}
+
+// mother-box
+.block-wrapper {
+  // border: 1px solid red;
+  max-width: 1710px;
+  width: 100%;
+  margin: 3rem auto;
+
+  .spd-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .d-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+// element box
+.element-container {
+  border: 2px solid green;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 10.5px;
+  width: 5rem;
+  height: 5.5rem;
+  transition: all 1s ease;
+
+  &:hover {
+    transform: scale(2);
+    // background-color: #fff;
+  }
+
+  .AN-AM {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .symbol-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .symbol {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .ec {
+    text-align: center;
+    padding: 0 2px;
+  }
+}
+
+// period one
+
+.period-one {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 .3rem;
+  // display: grid;
+  // gap: 1rem;
+  // grid-auto-flow: column;
+}
+
+// the s-block
+.s-block {
+  // border: 1px solid red;
+  height: fit-content;
+  margin: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+// the p-block
+.p-block {
+  // border: 1px solid blue;
+  height: fit-content;
+  margin: 0.3rem;
+  // display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  // align-items: flex-start;
+}
+
+// the p-block
+.d-block {
+  // border: 1px solid black;
+  height: fit-content;
+  margin: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+}
+
+// the p-block
+.f-block {
+  // border: 1px solid brown;
+  height: fit-content;
+  width: fit-content;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-gap: 10px;
+}
