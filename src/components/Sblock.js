@@ -5,8 +5,8 @@ const Sblock = ({ elements }) => {
   const sBlockElements = elements
     .filter((element) => {
       return (
-        (element.xpos === 1 || element.xpos === 2) &&
-        element.name !== 'Hydrogen'
+        element.category === 'alkali metal' ||
+        element.category === 'alkaline earth metal'
       )
     })
     .map((element) => {
