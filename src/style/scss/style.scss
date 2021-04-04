@@ -3,14 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  background: #000;
-  color: #fff;
+  // background: #000;
+  // color: #fff;
 }
 
 // mother-box
 .block-wrapper {
   // border: 1px solid red;
-  max-width: 1710px;
+  max-width: 1408px;
   width: 100%;
   margin: 3rem auto;
 
@@ -29,14 +29,15 @@
 
 // element box
 .element-container {
-  border: 2px solid green;
+  border: 1px solid green;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 10.5px;
-  width: 5rem;
-  height: 5.5rem;
+  font-size: 9px;
+  width: 4rem;
+  height: 5rem;
+  background-color: #fff;
   transition: all 1s ease;
 
   &:hover {
@@ -73,7 +74,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 0 .3rem;
+  margin: 0.3rem;
   // display: grid;
   // gap: 1rem;
   // grid-auto-flow: column;
@@ -102,7 +103,7 @@
 }
 
 // the p-block
-.d-block {
+.dBlock {
   // border: 1px solid black;
   height: fit-content;
   margin: 0.3rem;

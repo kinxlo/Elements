@@ -2,32 +2,39 @@ import React from 'react'
 import Element from './Element'
 
 const Pblock = ({ elements }) => {
-  //split the arrays based on the categories which are:
-  //   post-transition metal, metalloid, polyatomic nonmetal, (element.category === 'diatomic nonmetal' && element.name !== 'Hydrogen') ||, noble gas
-
+  const pBlock = elements.filter((element) => {
+    return (
+      element.category === 'post-transition metal' ||
+      element.category === 'metalloid' ||
+      element.category === 'polyatomic nonmetal' ||
+      (element.category === 'diatomic nonmetal' &&
+        element.name !== 'Hydrogen') ||
+      element.category === 'noble gas'
+    )
+  })
+  //   console.log(pBlock)
 
   //post-transition metal
-  const period3 = elements.filter((element) => element.ypos === 2)
+  const period2 = pBlock.filter((element) => element.ypos === 2)
 
   //metaloid
-  const period4 = elements.filter(
+  const period3 = pBlock.filter(
     (element) => element.ypos === 3 && element.name !== 'Flerovium'
   )
 
   //polyatomic nonmetal
-  const period5 = elements.filter((element) => element.ypos === 4)
+  const period4 = pBlock.filter((element) => element.ypos === 4)
 
   //diatomic nonmetal that is not hydrogen
-  const period6 = elements.filter((element) => element.ypos === 5)
+  const period5 = pBlock.filter((element) => element.ypos === 5)
 
   //noble gases
-  const period7 = elements.filter((element) => element.ypos === 6)
+  const period6 = elements.filter((element) => element.ypos === 6)
 
-  const period8 = elements.filter(
+  const period7 = pBlock.filter(
     (element) => element.ypos === 7 && element.name !== 'Helium'
   )
 
-  //function to map each period into the element block
   const mapping = (period) => {
     return period.map((element) => {
       return (
@@ -44,23 +51,21 @@ const Pblock = ({ elements }) => {
     })
   }
 
+  const periodTwo = mapping(period2)
   const periodThree = mapping(period3)
   const periodFour = mapping(period4)
   const periodFive = mapping(period5)
   const periodSix = mapping(period6)
   const periodSeven = mapping(period7)
-  const periodEight = mapping(period8)
-
-  //   console.log(periodThree);
 
   return (
     <div className='p-block'>
+      {periodTwo}
       {periodThree}
       {periodFour}
       {periodFive}
       {periodSix}
       {periodSeven}
-      {periodEight}
     </div>
   )
 }

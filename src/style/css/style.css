@@ -4,12 +4,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
-  background: #000;
-  color: #fff;
 }
 
 .block-wrapper {
-  max-width: 1710px;
+  max-width: 1408px;
   width: 100%;
   margin: 3rem auto;
 }
@@ -40,7 +38,7 @@
 }
 
 .element-container {
-  border: 2px solid green;
+  border: 1px solid green;
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,9 +49,10 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  font-size: 10.5px;
-  width: 5rem;
-  height: 5.5rem;
+  font-size: 9px;
+  width: 4rem;
+  height: 5rem;
+  background-color: #fff;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
@@ -107,7 +106,7 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  margin: 0 .3rem;
+  margin: 0.3rem;
 }
 
 .s-block {
@@ -134,7 +133,7 @@
   grid-gap: 10px;
 }
 
-.d-block {
+.dBlock {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
