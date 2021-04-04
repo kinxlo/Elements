@@ -1,7 +1,7 @@
 import React from 'react'
 import Element from './Element'
 
-const Sblock = ({elements}) => {
+const Sblock = ({ elements }) => {
   const sBlockElements = elements
     .filter((element) => {
       return (
@@ -12,7 +12,7 @@ const Sblock = ({elements}) => {
     .map((element) => {
       return (
         <Element
-          key={element.symbol}
+          key={element.number}
           name={element.name}
           symbol={element.symbol}
           atomicNumber={element.number}

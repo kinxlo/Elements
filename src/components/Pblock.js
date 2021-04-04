@@ -12,7 +12,7 @@ const Pblock = ({ elements }) => {
       element.category === 'noble gas'
     )
   })
-  //   console.log(pBlock)
+  // console.log(pBlock)
 
   //post-transition metal
   const period2 = pBlock.filter((element) => element.ypos === 2)
@@ -29,7 +29,7 @@ const Pblock = ({ elements }) => {
   const period5 = pBlock.filter((element) => element.ypos === 5)
 
   //noble gases
-  const period6 = elements.filter((element) => element.ypos === 6)
+  const period6 = pBlock.filter((element) => element.ypos === 6)
 
   const period7 = pBlock.filter(
     (element) => element.ypos === 7 && element.name !== 'Helium'
@@ -40,12 +40,12 @@ const Pblock = ({ elements }) => {
       return (
         //and output the data to the property of the element component
         <Element
+          key={element.number} //this is the unique id for the elements
           name={element.name}
           atomicNumber={element.number}
           massNumber={element.atomic_mass}
           symbol={element.symbol}
-          electronicConfiguration={element.electron_configuration_semantic}
-          key={element.number} //this is the unique id for the elements
+          ec={element.electron_configuration_semantic}
         />
       )
     })

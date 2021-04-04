@@ -5,15 +5,12 @@ const Dblock = ({ elements }) => {
   // check that the prop array is not empty
   const dBlockElements = elements
     .filter((element) => {
-      return (
-        (element.xpos === 1 || element.xpos === 2) &&
-        element.name !== 'Hydrogen'
-      )
+      return element.category === 'transition metal'
     })
     .map((element) => {
       return (
         <Element
-          key={element.symbol}
+          key={element.number}
           name={element.name}
           symbol={element.symbol}
           atomicNumber={element.number}

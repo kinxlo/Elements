@@ -6,9 +6,9 @@ import Sblock from './components/Sblock'
 
 import Dblock from './components/Dblock'
 import Pblock from './components/Pblock'
-// import Fblock from './components/Fblock'
-// import Hydrogen from './components/Hydrogen'
-// import Helium from './components/Helium'
+import Fblock from './components/Fblock'
+import Hydrogen from './components/Hydrogen'
+import Helium from './components/Helium'
 
 // library imports
 import React, { Component } from 'react'
@@ -42,8 +42,8 @@ class App extends Component {
     return (
       <div className='block-wrapper'>
         <div className='period-one'>
-          {/* <Hydrogen elements={this.state.periodOne} /> */}
-          {/* <Helium elements={this.state.periodOne} /> */}
+          <Hydrogen elements={this.state.elements} />
+          <Helium elements={this.state.elements} />
         </div>
         <div className='spd-container'>
           <Sblock elements={this.state.elements} />
@@ -53,7 +53,7 @@ class App extends Component {
           <Pblock elements={this.state.elements} />
         </div>
         <div className='f-container'>
-          {/* <Fblock elements={this.state.elements} /> */}
+          <Fblock elements={this.state.elements} />
         </div>
       </div>
     )
