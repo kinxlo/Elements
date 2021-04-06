@@ -1,7 +1,8 @@
 import React from 'react'
-import Element from './Element'
+import Element from '../Element'
 
 const Pblock = ({ elements }) => {
+  //filter through the elements and return an array of 4 groups that i cant write right now
   const pBlock = elements.filter((element) => {
     return (
       element.category === 'post-transition metal' ||
@@ -35,6 +36,7 @@ const Pblock = ({ elements }) => {
     (element) => element.ypos === 7 && element.name !== 'Helium'
   )
 
+  // then map though the filtered elements to produce the <Element/> component with its properties using this mapping() function
   const mapping = (period) => {
     return period.map((element) => {
       return (
@@ -46,6 +48,7 @@ const Pblock = ({ elements }) => {
           massNumber={element.atomic_mass}
           symbol={element.symbol}
           ec={element.electron_configuration_semantic}
+          category={element.category}
         />
       )
     })

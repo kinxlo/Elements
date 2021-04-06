@@ -5,15 +5,15 @@ class Modal extends React.Component {
     super(props)
     this.state = {
       name: this.props.element.name,
+      color: this.props.element.color
     }
   }
-
 
   render() {
     return (
       <>
         <div
-          className='modal fade'
+          className='modal fade cc-modal'
           id={this.state.name}
           data-backdrop='static'
           data-keyboard='false'
@@ -25,7 +25,7 @@ class Modal extends React.Component {
             <div className='modal-content'>
               <div className='modal-header'>
                 <h5 className='modal-title' id='staticBackdropLabel'>
-                  Modal title
+                  {this.state.name}
                 </h5>
                 <button
                   type='button'
@@ -36,7 +36,7 @@ class Modal extends React.Component {
                   <span aria-hidden='true'>&times;</span>
                 </button>
               </div>
-              <div className='modal-body'>{this.state.name}</div>
+              <div className='modal-body'>{this.state.color}</div>
               <div className='modal-footer'>
                 <button
                   type='button'
@@ -45,10 +45,7 @@ class Modal extends React.Component {
                 >
                   Close
                 </button>
-                <button
-                  type='button'
-                  className='btn btn-primary'
-                >
+                <button type='button' className='btn btn-primary'>
                   Understood
                 </button>
               </div>

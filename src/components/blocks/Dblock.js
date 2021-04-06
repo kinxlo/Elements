@@ -1,12 +1,13 @@
 import React from 'react'
-import Element from './Element'
+import Element from '../Element'
 
 const Dblock = ({ elements }) => {
-  // check that the prop array is not empty
+  //filter through the elements and return an array of transition metal elements
   const dBlockElements = elements
     .filter((element) => {
       return element.category === 'transition metal'
     })
+    // then map though the filtered elements to produce the <Element/> component with its properties
     .map((element) => {
       return (
         <Element
@@ -16,6 +17,7 @@ const Dblock = ({ elements }) => {
           atomicNumber={element.number}
           massNumber={element.atomic_mass}
           ec={element.electron_configuration_semantic}
+          category={element.category}
         />
       )
     })

@@ -2,26 +2,32 @@
 import './style/css/style.css'
 
 // components imports
-import Sblock from './components/Sblock'
+import Sblock from './components/blocks/Sblock'
 
-import Dblock from './components/Dblock'
-import Pblock from './components/Pblock'
-import Fblock from './components/Fblock'
-import Hydrogen from './components/Hydrogen'
-import Helium from './components/Helium'
+import Dblock from './components/blocks/Dblock'
+import Pblock from './components/blocks/Pblock'
+import Fblock from './components/blocks/Fblock'
+import Hydrogen from './components/blocks/Hydrogen'
+import Helium from './components/blocks/Helium'
 
 // library imports
 import React, { Component } from 'react'
+import ElementsDetails from './components/ElementsDetails'
 
 class App extends Component {
   //imitial state of the app which contains an empty element array
   constructor(props) {
     super(props)
+    //the initial state of the app
     this.state = {
-      elements: [],
+      elements: [], //the list of all elements
+      backgroundColor: null, //inintial state of the background
+      showSun: { display: `block` }, //sun icon display in block
+      showMoon: { display: `none` }, //moon display is not visible
     }
   }
 
+  // when the component is just mounted on the DOM
   componentDidMount() {
     // fetching data from elements.json(locally)
     fetch(`/elements.json`)
@@ -38,24 +44,64 @@ class App extends Component {
       })
   }
 
+  // change the background color of the app
+  handleBackgroundChange = (e) => {
+    // onclick if the target is the sun icon,
+    if (e.target.id === 'sun') {
+      // change the state of the backgroundColor, showMoon and showSun icon accodingly
+      this.setState({
+        backgroundColor: { backgroundColor: `#fff` },
+        showMoon: { display: `block` },
+        showSun: { display: `none` },
+      })
+      // else if it is the moon icon
+    } else {
+      this.setState({
+        backgroundColor: { backgroundColor: `rgba(0, 0, 0, 0.877)` },
+        showSun: { display: `block` },
+        showMoon: { display: `none` },
+      })
+    }
+  }
+
   render() {
     return (
-      <div className='block-wrapper'>
-        <div className='period-one'>
-          <Hydrogen elements={this.state.elements} />
-          <Helium elements={this.state.elements} />
+      <main style={this.state.backgroundColor}>
+        <div>
+          <i
+            id='moon'
+            style={this.state.showMoon}
+            className='fas fa-moon'
+            onClick={this.handleBackgroundChange}
+          ></i>
+          <i
+            id='sun'
+            style={this.state.showSun}
+            className='fas fa-sun'
+            onClick={this.handleBackgroundChange}
+          ></i>
         </div>
-        <div className='spd-container'>
-          <Sblock elements={this.state.elements} />
-          <div className='d-container'>
-            <Dblock elements={this.state.elements} />
+        <section className='block-wrapper'>
+          <div className='period-one'>
+            <Hydrogen elements={this.state.elements} />
+            <Helium elements={this.state.elements} />
           </div>
-          <Pblock elements={this.state.elements} />
-        </div>
-        <div className='f-container'>
-          <Fblock elements={this.state.elements} />
-        </div>
-      </div>
+          <div className='spd-container'>
+            <Sblock elements={this.state.elements} />
+            <div className='d-container'>
+            <h3>THE PERIODIC TABLE OF ELEMENTS</h3>
+              <Dblock elements={this.state.elements} />
+            </div>
+            <Pblock elements={this.state.elements} />
+          </div>
+          <div className='f-container'>
+            <Fblock elements={this.state.elements} />
+          </div>
+        </section>
+        <section>
+          <ElementsDetails />
+        </section>
+      </main>
     )
   }
 }

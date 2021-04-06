@@ -4,12 +4,32 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.877);
+  padding-top: 3rem;
+  padding-left: 2rem;
+  overflow: hidden;
+}
+
+main .detail-section {
+  width: 30rem;
+  padding: 0 2rem;
 }
 
 .block-wrapper {
   max-width: 1408px;
   width: 100%;
-  margin: 3rem auto;
 }
 
 .block-wrapper .spd-container {
@@ -38,7 +58,7 @@
 }
 
 .element-container {
-  border: 1px solid green;
+  border: 3px outset lightgrey;
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,16 +70,13 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-size: 9px;
-  width: 4rem;
-  height: 5rem;
-  background-color: #fff;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  width: 4.4rem;
+  height: 5.3rem;
 }
 
 .element-container:hover {
-  -webkit-transform: scale(2);
-          transform: scale(2);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .element-container .AN-AM {
@@ -81,6 +98,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-weight: bold;
 }
 
 .element-container .symbol-name .symbol {
@@ -94,19 +112,12 @@
 }
 
 .period-one {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   margin: 0.3rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 78.4rem;
 }
 
 .s-block {
@@ -118,7 +129,7 @@
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2.5px;
 }
 
 .p-block {
@@ -130,7 +141,7 @@
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2.5px;
 }
 
 .dBlock {
@@ -142,7 +153,7 @@
   display: grid;
   -ms-grid-columns: (1fr)[10];
       grid-template-columns: repeat(10, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2.5px;
 }
 
 .f-block {
@@ -152,10 +163,35 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 2rem auto;
+  margin: 2rem 12.2rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[15];
       grid-template-columns: repeat(15, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2.5px;
+}
+
+.modal-dialog {
+  max-width: 1200px;
+  margin: 5rem auto;
+}
+
+.modal-dialog .modal-content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.fas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#sun {
+  color: #fff;
+}
+
+.table {
+  border-radius: 10px;
 }

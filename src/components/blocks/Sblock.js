@@ -1,7 +1,8 @@
 import React from 'react'
-import Element from './Element'
+import Element from '../Element'
 
 const Sblock = ({ elements }) => {
+  //filter through the elements and return an array of alkali metal and alkaline earth metal elements
   const sBlockElements = elements
     .filter((element) => {
       return (
@@ -9,6 +10,7 @@ const Sblock = ({ elements }) => {
         element.category === 'alkaline earth metal'
       )
     })
+    // then map though the filtered elements to produce the <Element/> component with its properties
     .map((element) => {
       return (
         <Element
@@ -18,6 +20,7 @@ const Sblock = ({ elements }) => {
           atomicNumber={element.number}
           massNumber={element.atomic_mass}
           ec={element.electron_configuration_semantic}
+          category={element.category}
         />
       )
     })

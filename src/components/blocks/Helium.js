@@ -1,21 +1,22 @@
 import React from 'react'
-import Element from './Element'
+import Element from '../Element'
 
 const Helium = ({ elements }) => {
-
   const Helium = elements
     .filter((element) => {
       return element.name === 'Helium'
     })
+    // then map though the filtered elements to produce the <Element/> component with its properties
     .map((element) => {
       return (
         <Element
-          name={element.number}
+          key={element.number} //this is the unique id for the elements
+          name={element.name}
           atomicNumber={element.number}
           massNumber={element.atomic_mass}
           symbol={element.symbol}
           ec={element.electron_configuration_semantic}
-          key={element.number} //this is the unique id for the elements
+          category={element.category}
         />
       )
     })
