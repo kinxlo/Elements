@@ -5,7 +5,27 @@ import React from 'react'
 class Element extends React.Component {
   constructor(props) {
     super(props)
-    const { name, atomicNumber, massNumber, symbol, ec } = this.props
+    const {
+      name,
+      symbol,
+      atomicNumber,
+      massNumber,
+      discoveredBy,
+      namedBy,
+      ec,
+      category,
+      atomicMass,
+      group,
+      period,
+      density,
+      boilingPoint,
+      meltingPoint,
+      shells,
+      ionizationEnergy,
+      electionAffinity,
+      phase,
+      source,
+    } = this.props
 
     // this is the initial state of each element
     this.state = {
@@ -14,6 +34,20 @@ class Element extends React.Component {
       atomicNumber,
       symbol,
       ec,
+      category,
+      atomicMass,
+      discoveredBy,
+      namedBy,
+      group,
+      period,
+      density,
+      boilingPoint,
+      meltingPoint,
+      shells,
+      ionizationEnergy,
+      electionAffinity,
+      phase,
+      source,
     }
   }
 
@@ -28,7 +62,7 @@ class Element extends React.Component {
         break
       case 'alkaline earth metal':
         color = {
-          backgroundColor: `#f39845`,
+          backgroundColor: `#3b7bb8`,
         }
         break
       case 'post-transition metal':
@@ -38,7 +72,7 @@ class Element extends React.Component {
         break
       case 'metalloid':
         color = {
-          backgroundColor: `#3b7bb8`,
+          backgroundColor: `#f2cd40`,
         }
         break
       case 'polyatomic nonmetal':
@@ -58,7 +92,7 @@ class Element extends React.Component {
         break
       case 'transition metal':
         color = {
-          backgroundColor: `#f2cd40`,
+          backgroundColor: `#f39c12`,
         }
         break
       case 'lanthanide':
@@ -79,9 +113,34 @@ class Element extends React.Component {
   }
 
   handleClick = (e) => {
-    const detailedSection = document.querySelector('.element-name')
+    const answers = document.querySelectorAll('.answer')
+    const elementURL = document.querySelector('.URL')
+    const stateValue = [
+      this.state.name,
+      this.state.symbol,
+      this.state.atomicNumber,
+      this.state.massNumber,
+      this.state.discoveredBy,
+      this.state.namedBy,
+      this.state.group,
+      this.state.period,
+      this.state.density,
+      this.state.boilingPoint,
+      this.state.meltingPoint,
+      this.state.shells,
+      this.state.ec,
+      this.state.ionizationEnergy,
+      this.state.phase,
+      this.state.category,
+      this.state.source,
+    ]
 
-    detailedSection.textContent = this.state.name
+    for (let i = 0; i < answers.length; i++) {
+      answers[i].textContent = stateValue[i]
+    }
+
+    elementURL.href = this.state.source
+    console.log(elementURL.href)
   }
 
   render() {

@@ -42,13 +42,26 @@ const Pblock = ({ elements }) => {
       return (
         //and output the data to the property of the element component
         <Element
-          key={element.number} //this is the unique id for the elements
+          key={element.number}
           name={element.name}
+          symbol={element.symbol}
           atomicNumber={element.number}
           massNumber={element.atomic_mass}
-          symbol={element.symbol}
           ec={element.electron_configuration_semantic}
           category={element.category}
+          atomicMass={element.atomic_mass}
+          discoveredBy={element.discovered_by}
+          namedBy={element.named_by}
+          group={element.xpos}
+          period={element.period}
+          density={element.density}
+          boilingPoint={element.boil}
+          meltingPoint={element.melt}
+          shells={element.shells}
+          ionizationEnergy={element.ionization_energies}
+          electionAffinity={element.electron_affinity}
+          phase={element.phase}
+          source={element.source}
         />
       )
     })

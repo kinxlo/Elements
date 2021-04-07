@@ -6,77 +6,85 @@ const ElementsDetails = () => {
       <table className='table table-striped table-dark'>
         <thead>
           <tr>
-            <th className='element-name border border-0' scope='col'>
-              ELEMENT DETAILS
-            </th>
+            <th className='answer border border-0'></th>
           </tr>
         </thead>
+        {/* <div className='table-body'> */}
         <tbody>
           <tr>
-            <td>symbol</td>
-            <td>Otto</td>
+            <td className='question'>symbol</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>atomic Number</td>
-            <td>Thornton</td>
+            <td className='question'>atomic Number</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>atomic mass</td>
-            <td>the Bird</td>
+            <td className='question'>atomic mass</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>discovered By</td>
-            <td>Otto</td>
+            <td className='question'>discovered By</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>named By</td>
-            <td>Thornton</td>
+            <td className='question'>named By</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>group</td>
-            <td>the Bird</td>
+            <td className='question'>group</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>period</td>
-            <td>Otto</td>
+            <td className='question'>period</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>density</td>
-            <td>Thornton</td>
+            <td className='question'>density</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>boiling point</td>
-            <td>the Bird</td>
+            <td className='question'>boiling point</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>melting point</td>
-            <td>Otto</td>
+            <td className='question'>melting point</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>shells</td>
-            <td>Thornton</td>
+            <td className='question'>shells</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>electron configuration</td>
-            <td>the Bird</td>
+            <td className='question'>electron configuration</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>ionization energies</td>
-            <td>Otto</td>
+            <td className='question'>ionization energies</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>phase</td>
-            <td>Thornton</td>
+            <td className='question'>phase</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>category</td>
-            <td>the Bird</td>
+            <td className='question'>category</td>
+            <td className='answer'></td>
           </tr>
           <tr>
-            <td>source</td>
-            <td>Otto</td>
+            <td className='question'>source</td>
+            <td>
+              <a
+                href='index.html'
+                target='_blank'
+                rel='noreferrer'
+                className='answer URL'
+              >
+              </a>
+            </td>
           </tr>
         </tbody>
+        {/* </div> */}
       </table>
     </article>
   )
