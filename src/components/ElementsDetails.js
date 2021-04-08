@@ -6,7 +6,7 @@ const ElementsDetails = () => {
       <table className='table table-striped table-dark'>
         <thead>
           <tr>
-            <th className='answer border border-0'></th>
+            <th className='answer border border-0'>Elements</th>
           </tr>
         </thead>
         {/* <div className='table-body'> */}
@@ -79,8 +79,7 @@ const ElementsDetails = () => {
                 target='_blank'
                 rel='noreferrer'
                 className='answer URL'
-              >
-              </a>
+              >.</a>
             </td>
           </tr>
         </tbody>

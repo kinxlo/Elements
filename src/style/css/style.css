@@ -71,6 +71,8 @@ main .detail-section {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-shadow: 3px 0px 10px grey;
+          box-shadow: 3px 0px 10px grey;
   font-size: 9px;
   width: 4.4rem;
   height: 5.3rem;
@@ -214,7 +216,7 @@ main .detail-section {
   letter-spacing: 0.2rem;
   text-align: start;
   background-color: #f39c12;
-  text-align: center;
+  text-align: end;
 }
 
 .table tbody {

@@ -52,6 +52,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  box-shadow: 3px 0px 10px grey;
   font-size: 9px;
   width: 4.4rem;
   height: 5.3rem;
@@ -167,7 +168,7 @@ main {
     letter-spacing: 0.2rem;
     text-align: start;
     background-color: #f39c12;
-    text-align: center;
+    text-align: end;
   }
 
   tbody {

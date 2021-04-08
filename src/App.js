@@ -24,6 +24,7 @@ class App extends Component {
       backgroundColor: null, //inintial state of the background
       showSun: { display: `block` }, //sun icon display in block
       showMoon: { display: `none` }, //moon display is not visible
+      title: { color: `white` }, //title color
     }
   }
 
@@ -53,6 +54,7 @@ class App extends Component {
         backgroundColor: { backgroundColor: `#fff` },
         showMoon: { display: `block` },
         showSun: { display: `none` },
+        title: { color: `#000` },
       })
       // else if it is the moon icon
     } else {
@@ -60,6 +62,7 @@ class App extends Component {
         backgroundColor: { backgroundColor: `rgba(0, 0, 0, 0.877)` },
         showSun: { display: `block` },
         showMoon: { display: `none` },
+        title: { color: `#fff` },
       })
     }
   }
@@ -89,7 +92,7 @@ class App extends Component {
           <div className='spd-container'>
             <Sblock elements={this.state.elements} />
             <div className='d-container'>
-            <h3>THE PERIODIC TABLE OF ELEMENTS</h3>
+              <h3 style={this.state.title}>THE PERIODIC TABLE OF ELEMENTS</h3>
               <Dblock elements={this.state.elements} />
             </div>
             <Pblock elements={this.state.elements} />
